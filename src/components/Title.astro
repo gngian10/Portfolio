@@ -1,0 +1,9 @@
+---
+const { class: className } = Astro.props;
+---
+
+<h2
+    class={`flex items-center justify-center gap-x-3 text-3xl md:text-4xl font-semibold text-black/80 dark:text-white ${className}`}
+>
+    <slot />
+</h2>

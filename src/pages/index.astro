@@ -1,0 +1,45 @@
+---
+import Experiencia from "../components/Experiencia.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Proyectos from "../components/Proyectos.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import TitleSection from "../components/TitleSection.astro";
+import BriefcaseIcon from "../Icons/BriefcaseIcon.astro";
+import ProyectosIcon from "../Icons/ProyectosIcon.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+    <Header />
+
+    <main class="mx-5">
+        <SectionContainer
+            id="inicio"
+            className={"pt-32 pb-32 md:pt-36 md:pb-36"}
+        >
+            <Hero />
+        </SectionContainer>
+
+        <SectionContainer id="experiencia" className={"pb-32 md:pb-36"}>
+            <TitleSection>
+                <BriefcaseIcon class={"size-7 md:size-8"} />
+                Experiencia Laboral
+            </TitleSection>
+
+            <Experiencia />
+        </SectionContainer>
+
+        <SectionContainer id="proyectos" className={"pb-32 md:pb-36"}>
+            <TitleSection class="mb-16.5">
+                <ProyectosIcon class={"size-7 md:size-8"} />
+                Proyectos
+            </TitleSection>
+
+            <Proyectos />
+        </SectionContainer>
+    </main>
+
+    <Footer />
+</Layout>

@@ -1,0 +1,227 @@
+---
+import ArrowRight from "../Icons/ArrowRight.astro";
+import DeviceIcon from "../Icons/DeviceIcon.astro";
+import GitHubIcon from "../Icons/GitHubIcon.astro";
+import CustomButton from "./CustomButton.astro";
+import LinkButton from "./LinkButton.astro";
+
+export const TAGS = {
+    CLERK: {
+        name: "Clerk Auth",
+        class: "bg-orange-400 dark:bg-orange-300 text-gray-950",
+    },
+    SHADCN: {
+        name: "Shadcn",
+        class: "bg-orange-400 dark:bg-orange-300 text-gray-950",
+    },
+    TS: {
+        name: "TypeScript",
+        class: "bg-orange-400 dark:bg-orange-300 text-gray-950",
+    },
+    ASP: {
+        name: "ASP.NET Core",
+        class: "bg-orange-400 dark:bg-orange-300 text-gray-950",
+    },
+    "C#": {
+        name: "C#",
+        class: "bg-orange-400 dark:bg-orange-300 text-gray-950",
+    },
+    HTML: {
+        name: "HTML",
+        class: "bg-orange-400 dark:bg-orange-300 text-gray-950",
+    },
+    CSS: {
+        name: "CSS",
+        class: "bg-orange-400 dark:bg-orange-300 text-gray-950",
+    },
+    JS: {
+        name: "JS",
+        class: "bg-orange-400 dark:bg-orange-300 text-gray-950",
+    },
+    SQL_SERVER: {
+        name: "Sql Server",
+        class: "bg-orange-400 dark:bg-orange-300 text-gray-950",
+    },
+    DRIZZLE: {
+        name: "Drizzle",
+        class: "bg-orange-400 dark:bg-orange-300 text-gray-950",
+    },
+    NEON_TECH: {
+        name: "Neon tech",
+        class: "bg-orange-400 dark:bg-orange-300 text-gray-950",
+    },
+    POSTGRESQL: {
+        name: "PostgreSQL",
+        class: "bg-orange-400 dark:bg-orange-300 text-gray-950",
+    },
+    REACT_ROUTER: {
+        name: "React router",
+        class: "bg-orange-400 dark:bg-orange-300 text-gray-950",
+    },
+    REDUX: {
+        name: "Redux",
+        class: "bg-orange-400 dark:bg-orange-300 text-gray-950",
+    },
+    REACT: {
+        name: "React",
+        class: "bg-orange-400 dark:bg-orange-300 text-gray-950",
+    },
+    NEXT: {
+        name: "Next.js",
+        class: "bg-orange-400 dark:bg-orange-300 text-gray-950",
+    },
+    TAILWIND: {
+        name: "Tailwind CSS",
+        class: "bg-orange-400 dark:bg-orange-300 text-gray-950",
+    },
+    FIGMA: {
+        name: "Figma",
+        class: "bg-orange-400 dark:bg-orange-300 text-gray-950",
+    },
+    POSTMAN: {
+        name: "Postman",
+        class: "bg-orange-400 dark:bg-orange-300 text-gray-950",
+    },
+};
+
+export const PROJECTS = [
+    {
+        title: "Red Emprende Las Bambas",
+        description:
+            "Proyecto real diseñado para gestionar y visualizar oportunidades de licitación dentro de la mina, proporcionando una plataforma donde los usuarios pueden consultar las oportunidades vigentes, conocer los requisitos específicos para participar y postularse a ellos de manera eficiente.",
+        link: "https://redemprende.lasbambas.com/",
+        image: "/mina-proyecto.webp",
+        tags: [
+            TAGS.REACT,
+            TAGS.TS,
+            TAGS.FIGMA,
+            TAGS.TAILWIND,
+            TAGS["C#"],
+            TAGS.ASP,
+            TAGS.POSTMAN,
+        ],
+    },
+    {
+        title: "CRUD Full Stack App",
+        description:
+            "Aplicación web moderna con operaciones CRUD para eventos, autenticación con Clerk, frontend optimizado con Next.js, diseño responsivo con Tailwind CSS, y gestión de base de datos con Drizzle, todo respaldado por Neon Tech y componentes modernos de ShadCN.",
+        github: "#",
+        image: "/eventos-proyecto.webp",
+        tags: [
+            TAGS.NEXT,
+            TAGS.TS,
+            TAGS.SHADCN,
+            TAGS.TAILWIND,
+            TAGS.CLERK,
+            TAGS.DRIZZLE,
+            TAGS.NEON_TECH,
+            TAGS.POSTGRESQL,
+        ],
+    },
+    {
+        title: "Fast Pizza",
+        description:
+            "Aplicación en donde se puede explorar una lista de pizzas, agregar, ajustar cantidades, eliminar productos y ver el cálculo total del carrito. La navegación entre páginas se maneja con React Router y el estado con Redux.",
+        link: "https://pizza-cart-react-vite.netlify.app",
+        github: "https://github.com/gngian10/Pizza-Cart",
+        image: "/pizza-proyecto.webp",
+        tags: [
+            TAGS.REACT,
+            TAGS.REACT_ROUTER,
+            TAGS.REDUX,
+            TAGS.TS,
+            TAGS.TAILWIND,
+        ],
+    },
+];
+---
+
+<div class="flex flex-col gap-y-28">
+    {
+        PROJECTS.map(
+            ({ image, title, description, tags, link, github }, index) => (
+                <article
+                    class={`flex flex-col space-x-0 space-y-8 group md:flex-row  md:space-y-0 ${(index + 1) % 2 === 0 ? "md:self-end md:gap-x-8" : "md:self-start md:space-x-8"}`}
+                >
+                    <div
+                        class={`w-full md:w-1/2 ${(index + 1) % 2 === 0 && "lg:order-2"}`}
+                    >
+                        <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:hover:bg-gray-800/50">
+                            <img
+                                alt={title}
+                                class="object-cover w-full transition duration-500 sm:h-full md:group-hover:scale-105"
+                                loading="lazy"
+                                src={image}
+                            />
+                        </div>
+                    </div>
+
+                    <div class="w-full md:w-1/2 md:max-w-lg">
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+                            {title}
+                        </h3>
+
+                        <div class="flex flex-wrap mt-2">
+                            <ul class="flex flex-row flex-wrap mb-2 gap-2">
+                                {tags.map((tag) => (
+                                    <li>
+                                        <span
+                                            class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                                        >
+                                            {tag.name}
+                                        </span>
+                                    </li>
+                                ))}
+                            </ul>
+
+                            <div class="mt-2 text-gray-700 dark:text-gray-400 text-pretty">
+                                {description}
+                            </div>
+
+                            <footer class="flex items-end justify-start mt-4 gap-x-4">
+                                {github && (
+                                    <LinkButton href={github}>
+                                        <GitHubIcon class="size-5 md:size-6" />
+                                        Repositorio
+                                    </LinkButton>
+                                )}
+
+                                {link && (
+                                    <LinkButton href={link}>
+                                        <DeviceIcon class="size-5 md:size-6" />
+                                        Visitar
+                                    </LinkButton>
+                                )}
+                            </footer>
+                        </div>
+                    </div>
+                </article>
+            )
+        )
+    }
+
+    <div class="flex justify-center">
+        <CustomButton href={"https://github.com/gngian10"}>
+            <span>Ver más proyectos</span>
+
+            <span class="arrow">
+                <ArrowRight />
+            </span>
+        </CustomButton>
+    </div>
+</div>
+
+<style>
+    .arrow {
+        animation: arrow-animation 0.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes arrow-animation {
+        from {
+            transform: translateX(-4px);
+        }
+        to {
+            transform: translateX(4px);
+        }
+    }
+</style>

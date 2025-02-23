@@ -1,0 +1,98 @@
+---
+import ThemeToggle from "./ThemeToggle.astro";
+
+const navItems = [
+    {
+        title: "Inicio",
+        label: "inicio",
+        url: "/#inicio",
+    },
+    {
+        title: "Experiencia",
+        label: "experiencia",
+        url: "/#experiencia",
+    },
+    {
+        title: "Proyectos",
+        label: "proyectos",
+        url: "/#proyectos",
+    },
+];
+---
+
+<header
+    class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
+>
+    <nav
+        class="flex gap-4 p-3 text-sm md:text-base font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
+    >
+        {
+            navItems.map((link) => (
+                <a
+                    class="relative block transition hover:text-orange-500 dark:hover:text-orange-300"
+                    aria-label={link.label}
+                    href={link.url}
+                >
+                    {link.title}
+                </a>
+            ))
+        }
+
+        <ThemeToggle />
+    </nav>
+</header>
+
+<style>
+    nav {
+        animation: nav-shadown 1s linear both;
+        animation-timeline: scroll();
+        animation-range: 0 100px;
+    }
+
+    nav {
+        @apply dark:bg-gray-800/90 bg-white/50;
+    }
+
+    @keyframes nav-shadown {
+        0% {
+            @apply dark:bg-gray-800/0 bg-white/0;
+        }
+        to {
+            @apply shadow-lg ring-1 backdrop-blur ring-white/10;
+        }
+    }
+</style>
+
+<script>
+    const sections = document.querySelectorAll("section");
+    const navItems = document.querySelectorAll("header nav a");
+
+    function handleActiveLinks() {
+        sections.forEach((section) => {
+            const scroll = window.scrollY;
+            const sectionTop = section.offsetTop - 200;
+            const sectionH = section.offsetHeight;
+            const sectionId = section.id;
+
+            if (scroll > sectionTop && scroll < sectionTop + sectionH) {
+                navItems.forEach((item) => {
+                    item.classList.remove(
+                        "text-orange-400",
+                        "dark:text-orange-300"
+                    );
+
+                    if (item.getAttribute("aria-label") === sectionId) {
+                        item.classList.add(
+                            "text-orange-400",
+                            "dark:text-orange-300"
+                        );
+                    }
+                });
+            }
+        });
+    }
+
+    handleActiveLinks();
+
+    window.addEventListener("scroll", handleActiveLinks);
+</script>

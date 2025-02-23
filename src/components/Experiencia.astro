@@ -1,0 +1,58 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+export interface Experiencia {
+    title: string;
+    company: string;
+    descriptions: Array<string>;
+    date: string;
+}
+
+const EXPERIENCE: Array<Experiencia> = [
+    {
+        date: "julio 2024",
+        title: "Analista de Software",
+        company: "IDS Latam",
+        descriptions: [
+            "Realizar análisis, diseño, codificación, prueba, implementación y mantenimiento de soluciones de software",
+            "Asegurar que el software desarrollado cumpla con los estándares de codificación de proyecto",
+            "Desarrollar en un entorno Docker y Docker Compose",
+            "Diseño de bases de datos, desarrollo de APIs",
+            "Apoyar en tareas de migración a Micro-Frontends",
+        ],
+    },
+    {
+        date: "junio 2023",
+        title: "Data Analyst",
+        company: "Professional Business Peru",
+        descriptions: [
+            "Desarrollo de Dashboards y visualización de datos",
+            "Automatización de procesos de análisis de datos",
+            "Análisis estadístico",
+            "Optimización de la calidad de datos",
+            "Administración de Base de Datos",
+        ],
+    },
+    {
+        date: "enero 2019",
+        title: "Asistente Administrativo en Cómputo e Informática",
+        company: "X-Ray Ecomovil",
+        descriptions: [
+            "Mantenimiento y administración de sistemas",
+            "Gestión de Base de Datos",
+            "Soporte administrativo en gestión de proyectos",
+            "Asistencia en la implementación de nuevas tecnologías",
+        ],
+    },
+];
+---
+
+<ul class="relative mt-16">
+    {
+        EXPERIENCE.map((experience) => (
+            <li>
+                <ExperienceItem {...experience} />
+            </li>
+        ))
+    }
+</ul>

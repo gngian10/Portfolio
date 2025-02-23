@@ -1,0 +1,56 @@
+---
+import { ClientRouter } from "astro:transitions";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <meta
+            name="description"
+            content="Ingeniero de Sistemas e Informática especializado en el desarrollo, diseño y optimización de soluciones tecnológicas."
+        />
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Transitions -->
+        <ClientRouter />
+
+        <title>Portafolio de Gianfranco</title>
+    </head>
+    <body class="relative text-black dark:text-white">
+        <div
+            class="absolute inset-0 -z-10 min-h-screen w-full bg-white dark:bg-[#000000] bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] [background-size:16px_16px] dark:bg-[size:20px_20px]"
+        >
+        </div>
+
+        <slot />
+    </body>
+</html>
+
+<style is:global>
+    :root {
+        color-scheme: light dark;
+    }
+
+    html {
+        font-family: "Exo 2", sans-serif;
+        scroll-behavior: smooth;
+        scroll-padding: 5rem;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+    }
+</style>
