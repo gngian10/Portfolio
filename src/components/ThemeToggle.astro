@@ -3,7 +3,7 @@ import DarkIcon from "../Icons/DarkIcon.astro";
 import LightIcon from "../Icons/LightIcon.astro";
 import SystemIcon from "../Icons/SystemIcon.astro";
 
-const THEMES = ["Light", "Dark", "Sistema"];
+const THEMES = ["Claro", "Oscuro", "Sistema"];
 ---
 
 <div class="relative ml-1 mr-1">
@@ -14,10 +14,10 @@ const THEMES = ["Light", "Dark", "Sistema"];
     >
         <span class="sr-only">Elige el tema</span>
 
-        <LightIcon id="light" class="theme-toggle-icon size-5 transition-all" />
+        <LightIcon id="claro" class="theme-toggle-icon size-5 transition-all" />
 
         <DarkIcon
-            id="dark"
+            id="oscuro"
             class="theme-toggle-icon absolute size-5 transition-all"
         />
 
@@ -81,7 +81,7 @@ const THEMES = ["Light", "Dark", "Sistema"];
         const themePreference = getThemePreference();
 
         const isDark =
-            themePreference === "dark" ||
+            themePreference === "oscuro" ||
             (themePreference === "sistema" && matchMedia.matches);
 
         updateIcon(themePreference);

@@ -1,0 +1,40 @@
+---
+import ArrowRight from "../Icons/ArrowRight.astro";
+import CustomButton from "./CustomButton.astro";
+---
+
+<div class="text-center">
+  <h2 class="text-3xl md:text-4xl font-semibold mb-7">
+    Listo para llevar tu presencia digital al siguiente nivel?
+  </h2>
+
+  <p class="text-base mb-14">
+    Comunícate conmigo y discutamos sobre cómo puedo ayudarlo a lograr sus
+    objetivos
+  </p>
+
+  <CustomButton
+    href={"https://www.linkedin.com/in/gianfranco-carbajal-brice%C3%B1o-398678276"}
+  >
+    <span>Pongámonos en contacto</span>
+
+    <span class="arrow">
+      <ArrowRight />
+    </span>
+  </CustomButton>
+</div>
+
+<style>
+  .arrow {
+    animation: arrow-animation 0.5s ease-in-out infinite alternate;
+  }
+
+  @keyframes arrow-animation {
+    from {
+      transform: rotate(-45deg) translateX(-4px);
+    }
+    to {
+      transform: rotate(-45deg) translateX(4px);
+    }
+  }
+</style>
