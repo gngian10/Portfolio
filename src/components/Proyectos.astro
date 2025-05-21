@@ -37,7 +37,7 @@ export const TAGS = {
         class: "bg-orange-400 dark:bg-orange-300 text-gray-950",
     },
     JS: {
-        name: "JS",
+        name: "JavaScript",
         class: "bg-orange-400 dark:bg-orange-300 text-gray-950",
     },
     SQL_SERVER: {
@@ -89,7 +89,7 @@ export const TAGS = {
         class: "bg-orange-400 dark:bg-orange-300 text-gray-950",
     },
     BOOTSTRAP: {
-        name: "Bootsrap",
+        name: "Bootstrap",
         class: "bg-orange-400 dark:bg-orange-300 text-gray-950",
     },
 };
@@ -120,13 +120,13 @@ export const PROJECTS = [
         link: "https://www.lasbambas.com/",
         image: "/lasbambas.webp",
         tags: [
+            TAGS.HTML,
+            TAGS.CSS,
+            TAGS.BOOTSTRAP,
+            TAGS.JS,
             TAGS.JQUERY,
             TAGS.ASP,
             TAGS["C#"],
-            TAGS.BOOTSTRAP,
-            TAGS.JS,
-            TAGS.HTML,
-            TAGS.CSS,
             TAGS.SQL_SERVER,
         ],
     },
@@ -148,69 +148,67 @@ export const PROJECTS = [
 ];
 ---
 
-<div>
-    <div class="flex flex-col gap-y-28 mb-16">
-        {
-            PROJECTS.map(
-                ({ image, title, description, tags, link, github }, index) => (
-                    <article
-                        class={`flex flex-col space-x-0 space-y-8 group md:flex-row md:space-y-0 ${(index + 1) % 2 === 0 ? "md:self-end md:gap-x-8" : "md:self-start md:space-x-8"} project`}
+<div class="flex flex-col gap-y-28 mb-16">
+    {
+        PROJECTS.map(
+            ({ image, title, description, tags, link, github }, index) => (
+                <article
+                    class={`flex flex-col space-x-0 space-y-8 group md:flex-row md:space-y-0 ${(index + 1) % 2 === 0 ? "md:self-end md:gap-x-8" : "md:self-start md:space-x-8"} project`}
+                >
+                    <div
+                        class={`w-full md:w-1/2 ${(index + 1) % 2 === 0 && "lg:order-2"}`}
                     >
-                        <div
-                            class={`w-full md:w-1/2 ${(index + 1) % 2 === 0 && "lg:order-2"}`}
-                        >
-                            <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:hover:bg-gray-800/50">
-                                <img
-                                    alt={title}
-                                    class="object-cover w-full transition duration-500 sm:h-full md:group-hover:scale-105"
-                                    loading="lazy"
-                                    src={image}
-                                />
-                            </div>
+                        <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:hover:bg-gray-800/50">
+                            <img
+                                alt={title}
+                                class="object-cover w-full transition duration-500 sm:h-full md:group-hover:scale-105"
+                                loading="lazy"
+                                src={image}
+                            />
                         </div>
+                    </div>
 
-                        <div class="w-full md:w-1/2 md:max-w-lg">
-                            <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-                                {title}
-                            </h3>
+                    <div class="w-full md:w-1/2 md:max-w-lg">
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+                            {title}
+                        </h3>
 
-                            <div class="flex flex-wrap mt-2">
-                                <ul class="flex flex-row flex-wrap mb-2 gap-2">
-                                    {tags.map((tag) => (
-                                        <li>
-                                            <span
-                                                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-                                            >
-                                                {tag.name}
-                                            </span>
-                                        </li>
-                                    ))}
-                                </ul>
+                        <div class="flex flex-wrap mt-2">
+                            <ul class="flex flex-row flex-wrap mb-2 gap-2">
+                                {tags.map((tag) => (
+                                    <li>
+                                        <span
+                                            class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                                        >
+                                            {tag.name}
+                                        </span>
+                                    </li>
+                                ))}
+                            </ul>
 
-                                <div class="mt-2 text-gray-700 dark:text-gray-400 text-pretty">
-                                    {description}
-                                </div>
-
-                                <footer class="flex items-end justify-start mt-4 gap-x-4">
-                                    {github && (
-                                        <LinkButton href={github}>
-                                            <GitHubIcon class="size-5 md:size-6" />
-                                            Repositorio
-                                        </LinkButton>
-                                    )}
-
-                                    {link && (
-                                        <LinkButton href={link}>
-                                            <DeviceIcon class="size-5 md:size-6" />
-                                            Visitar
-                                        </LinkButton>
-                                    )}
-                                </footer>
+                            <div class="mt-2 text-gray-700 dark:text-gray-400 text-pretty">
+                                {description}
                             </div>
+
+                            <footer class="flex items-end justify-start mt-4 gap-x-4">
+                                {github && (
+                                    <LinkButton href={github}>
+                                        <GitHubIcon class="size-5 md:size-6" />
+                                        Repositorio
+                                    </LinkButton>
+                                )}
+
+                                {link && (
+                                    <LinkButton href={link}>
+                                        <DeviceIcon class="size-5 md:size-6" />
+                                        Visitar
+                                    </LinkButton>
+                                )}
+                            </footer>
                         </div>
-                    </article>
-                )
+                    </div>
+                </article>
             )
-        }
-    </div>
+        )
+    }
 </div>

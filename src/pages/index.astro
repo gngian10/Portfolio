@@ -16,29 +16,32 @@ import Layout from "../layouts/Layout.astro";
     <Header />
 
     <main class="mx-5 md:mx-0">
-        <SectionContainer id="inicio" className="pt-32 pb-32 md:pt-36 md:pb-36">
+        <SectionContainer id="inicio" className="py-32 md:py-36">
             <Hero />
         </SectionContainer>
 
-        <SectionContainer id="experiencia" className="pb-32 md:pb-36">
+        <SectionContainer
+            id="experiencia"
+            className="pb-32 md:pb-36 animate-to-left"
+        >
             <TitleSection>
-                <BriefcaseIcon class={"size-7 md:size-8"} />
+                <BriefcaseIcon class="size-7 md:size-8" />
                 Experiencia
             </TitleSection>
 
             <Experiencia />
         </SectionContainer>
 
-        <SectionContainer id="proyectos" className="pb-36 md:pb-36">
-            <TitleSection class="mb-16.5">
-                <ProyectosIcon class={"size-7 md:size-8"} />
+        <SectionContainer id="proyectos" className="pb-32 md:pb-36">
+            <TitleSection class="mb-16.5 section-appear">
+                <ProyectosIcon class="size-7 md:size-8" />
                 Proyectos
             </TitleSection>
 
             <Proyectos />
         </SectionContainer>
 
-        <SectionContainer className="pb-32 md:pb-36">
+        <SectionContainer className="pb-32 md:pb-36 section-appear">
             <Contact />
         </SectionContainer>
     </main>
@@ -53,7 +56,6 @@ import Layout from "../layouts/Layout.astro";
         animation-range: entry 0% cover 40%;
         animation-fill-mode: both;
     }
-
     @keyframes project-appear {
         from {
             opacity: 0;
@@ -62,6 +64,21 @@ import Layout from "../layouts/Layout.astro";
         to {
             opacity: 1;
             translate: 0 0;
+        }
+    }
+
+    .section-appear {
+        animation: section-appear 3s ease-in-out;
+        animation-timeline: view();
+        animation-range: entry 0% cover 30%;
+        animation-fill-mode: both;
+    }
+    @keyframes section-appear {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
         }
     }
 
@@ -79,18 +96,21 @@ import Layout from "../layouts/Layout.astro";
             translate: 0;
         }
     }
-    .animate-to-left {
-        animation: animate-to-left 0.7s cubic-bezier(0.33, 1.05, 0.69, 1);
+
+    @screen md {
+        .animate-to-left {
+            animation: animate-to-left 0.7s cubic-bezier(0.33, 1.05, 0.69, 1);
+        }
     }
     @keyframes animate-to-left {
         from {
             opacity: 0;
-            translate: 500px;
+            transform: translateX(500px);
         }
 
         to {
             opacity: 1;
-            translate: 0;
+            transform: translateX(0);
         }
     }
 </style>
