@@ -8,65 +8,99 @@ import LeetcodeIcon from "../Icons/LeetcodeIcon.astro";
 import LinkedInIcon from "../Icons/LinkedInIcon.astro";
 ---
 
-<div class="max-w-2xl">
-  <div class="flex flex-col md:flex-row md:gap-4 items-center mb-6">
-    <Image src={AvatarImg} alt={"imagen del avatar"} class={"size-28"} />
+<div class="max-w-2xl animate-to-right">
+    <div class="flex flex-col md:flex-row md:gap-4 items-center mb-6">
+        <Image src={AvatarImg} alt={"imagen del avatar"} class={"size-28"} />
 
-    <h1
-      class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white text-center md:text-left"
+        <h1
+            class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white text-center md:text-left"
+        >
+            ¡Hola! <span class="wave">👋</span>, soy Gianfranco
+        </h1>
+    </div>
+
+    <p
+        class="text-lg md:text-xl text-gray-800 dark:text-gray-300 [&>mark]:bg-orange-400 dark:[&>mark]:bg-orange-300 [&>mark]:font-semibold text-pretty [&>*]:leading-6"
     >
-      ¡Hola! 👋, soy Gianfranco
-    </h1>
-  </div>
+        <mark>Bachiller en Ingeniería de Sistemas e Informática</mark>, con
+        experiencia en desarrollo
+        <mark>Full Stack</mark>,
+        <mark>Análisis de Datos.</mark> y
+        <mark>Arquitectura de software.</mark>
+        <br /><br />
+        <span>
+            Mi formación sólida me ha brindado una visión clara y, con un
+            enfoque analítico, abordo desafíos complejos, buscando soluciones
+            eficientes y sostenibles.
+        </span>
+    </p>
 
-  <p
-    class="text-lg md:text-xl text-gray-800 dark:text-gray-300 [&>mark]:bg-orange-400 dark:[&>mark]:bg-orange-300 [&>mark]:font-semibold text-pretty [&>*]:leading-6"
-  >
-    <mark>Bachiller en Ingeniería de Sistemas e Informática</mark>, con
-    experiencia en desarrollo
-    <mark>Full Stack</mark> y
-    <mark>Análisis de Datos.</mark>
-    <br /><br />
-    <span>
-      Mi formación sólida me ha brindado una visión clara y, con un enfoque
-      analítico, abordo desafíos complejos, buscando soluciones eficientes y
-      sostenibles.
-    </span>
-  </p>
+    <nav class="flex flex-wrap gap-4 mt-8">
+        <SocialIcon href="https://github.com/gngian10">
+            <GitHubIcon class={"size-6"} />
+            <span>GitHub</span>
+        </SocialIcon>
 
-  <nav class="flex flex-wrap gap-4 mt-8">
-    <SocialIcon href="https://github.com/gngian10">
-      <GitHubIcon class={"size-6"} />
-      <span>GitHub</span>
-    </SocialIcon>
+        <SocialIcon href="https://codepen.io/giandev10">
+            <CodepenIcon class={"size-6"} />
+            <span>CodePen</span>
+        </SocialIcon>
 
-    <SocialIcon href="https://codepen.io/giandev10">
-      <CodepenIcon class={"size-6"} />
-      <span>CodePen</span>
-    </SocialIcon>
+        <SocialIcon href="https://leetcode.com/u/giandev10/">
+            <LeetcodeIcon class={"size-6"} />
+            <span>LeetCode</span>
+        </SocialIcon>
 
-    <SocialIcon href="https://leetcode.com/u/giandev10/">
-      <LeetcodeIcon class={"size-6"} />
-      <span>LeetCode</span>
-    </SocialIcon>
-
-    <SocialIcon
-      href="https://www.linkedin.com/in/gianfranco-carbajal-brice%C3%B1o-398678276"
-    >
-      <LinkedInIcon class="size-6" />
-      <span>LinkedIn</span>
-    </SocialIcon>
-  </nav>
+        <SocialIcon
+            href="https://www.linkedin.com/in/gianfranco-carbajal-brice%C3%B1o-398678276"
+        >
+            <LinkedInIcon class="size-6" />
+            <span>LinkedIn</span>
+        </SocialIcon>
+    </nav>
 </div>
 
 <style>
-  mark {
-    @apply rounded-2xl px-1;
-  }
-
-  nav {
-    & span {
-      @apply text-sm md:text-base;
+    mark {
+        @apply rounded-2xl px-1;
     }
-  }
+
+    nav {
+        & span {
+            @apply text-sm md:text-base;
+        }
+    }
+
+    .wave {
+        display: inline-block;
+        transform-origin: 70% 70%;
+        animation: wave 1.5s infinite ease-in-out;
+    }
+
+    @keyframes wave {
+        0% {
+            transform: rotate(0deg);
+        }
+        10% {
+            transform: rotate(15deg);
+        }
+        20% {
+            transform: rotate(-9deg);
+        }
+        30% {
+            transform: rotate(15deg);
+        }
+        40% {
+            transform: rotate(-5deg);
+        }
+        50% {
+            transform: rotate(11deg);
+        }
+        60% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(0deg);
+        }
+    }
 </style>
