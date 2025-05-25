@@ -1,38 +1,28 @@
 <style is:global>
-    * {
-        cursor: none !important;
-    }
+  * {
+    cursor: none !important;
+  }
 
-    .custom-cursor {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 24px;
-        height: 24px;
-        background: transparent;
-        border-radius: 50%;
-        pointer-events: none;
-        transform: translate(-50%, -50%);
-        transition: transform 0.05s ease-out;
-        z-index: 999;
+  .custom-selector {
+    position: fixed;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: transform 0.03s linear;
+    z-index: 999;
 
-        @apply bg-orange-300/90 shadow-md;
-    }
-
-    @media (width <= 780px) {
-        .custom-cursor {
-            display: none;
-        }
-    }
+    @apply bg-orange-300/90 shadow-md;
+  }
 </style>
 
 <script is:inline>
-    const cursor = document.createElement("div");
-    cursor.className = "custom-cursor";
-    document.body.appendChild(cursor);
+  const customSelector = document.createElement("div");
 
-    window.addEventListener("mousemove", (e) => {
-        cursor.style.left = `${e.clientX}px`;
-        cursor.style.top = `${e.clientY}px  `;
-    });
+  customSelector.classList.add("custom-selector");
+  document.body.appendChild(customSelector);
+
+  window.addEventListener("mousemove", (e) => {
+    customSelector.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+  });
 </script>
