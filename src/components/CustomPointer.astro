@@ -1,0 +1,52 @@
+<style is:global>
+    .pointer {
+        position: fixed;
+        width: 30px;
+        height: 30px;
+        top: 0;
+        left: 0;
+        translate: -50% -50%;
+        transition: transform 0.03s linear;
+        border-radius: 50%;
+        pointer-events: none;
+
+        @apply bg-orange-300/90 shadow-sm;
+    }
+
+    @media (width > 768px) {
+        * {
+            cursor: none !important;
+        }
+    }
+</style>
+
+<script>
+    let pointer: HTMLDivElement | null = null;
+
+    function movePointer(e: MouseEvent) {
+        if (pointer) {
+            pointer.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+        }
+    }
+
+    function updatePointerVisibility() {
+        const isDesktop = window.innerWidth > 768;
+
+        if (isDesktop && !pointer) {
+            pointer = document.createElement("div");
+            pointer.classList.add("pointer");
+            document.body.appendChild(pointer);
+
+            window.addEventListener("mousemove", movePointer);
+        }
+
+        if (!isDesktop && pointer) {
+            window.removeEventListener("mousemove", movePointer);
+            pointer.remove();
+            pointer = null;
+        }
+    }
+
+    window.addEventListener("resize", updatePointerVisibility);
+    window.addEventListener("DOMContentLoaded", updatePointerVisibility);
+</script>
