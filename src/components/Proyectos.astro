@@ -3,6 +3,8 @@ import DeviceIcon from "../Icons/DeviceIcon.astro";
 import GitHubIcon from "../Icons/GitHubIcon.astro";
 import LinkButton from "./LinkButton.astro";
 
+// bg: #1d2432
+
 export const TAGS = {
     CLERK: {
         name: "Clerk Auth",
@@ -100,6 +102,14 @@ export const TAGS = {
         name: "Vite",
         class: "bg-orange-400 dark:bg-orange-300 text-gray-950",
     },
+    NODE: {
+        name: "Node.js",
+        class: "bg-orange-400 dark:bg-orange-300 text-gray-950",
+    },
+    MONGODB: {
+        name: "MongoDB",
+        class: "bg-orange-400 dark:bg-orange-300 text-gray-950",
+    },
 };
 
 export const PROJECTS = [
@@ -108,7 +118,7 @@ export const PROJECTS = [
         description:
             "Proyecto diseñado para gestionar y visualizar oportunidades de licitación dentro de la mina, proporcionando una plataforma donde los usuarios pueden consultar las oportunidades vigentes, conocer los requisitos específicos para participar y postularse de manera eficiente.",
         link: "https://redemprende.lasbambas.com/",
-        image: "/mina-proyecto.webp",
+        image: "/red-proyecto.webp",
         tags: [
             TAGS.REACT,
             TAGS.TS,
@@ -121,24 +131,6 @@ export const PROJECTS = [
             TAGS.AZURE,
             TAGS.SWAGGER,
             TAGS.VITE,
-        ],
-    },
-    {
-        title: "Las Bambas",
-        description:
-            "Plataforma cuyo objetivo principal es informar sobre las actividades mineras de la empresa, sus proyectos de desarrollo sostenible, su impacto social y ambiental, y su relación con las comunidades",
-        link: "https://www.lasbambas.com/",
-        image: "/lasbambas.webp",
-        tags: [
-            TAGS.HTML,
-            TAGS.CSS,
-            TAGS.BOOTSTRAP,
-            TAGS.JS,
-            TAGS.JQUERY,
-            TAGS.ASP,
-            TAGS["C#"],
-            TAGS.SQL_SERVER,
-            TAGS.SWAGGER,
         ],
     },
     {
@@ -156,6 +148,32 @@ export const PROJECTS = [
             TAGS.TAILWIND,
             TAGS.VITE,
         ],
+    },
+    {
+        title: "Boardly",
+        description:
+            "Aplicación de productividad para capturar ideas, convertirlas en notas accionables y ordenarlas en tableros visuales.",
+        github: "https://github.com/gngian10/boardly",
+        image: "/boardly-proyecto.webp",
+        tags: [
+            TAGS.REACT,
+            TAGS.REACT_ROUTER,
+            TAGS.TS,
+            TAGS.TAILWIND,
+            TAGS.VITE,
+            TAGS.NODE,
+            TAGS.MONGODB,
+            TAGS.POSTMAN,
+        ],
+    },
+    {
+        title: "Kanban Board",
+        description:
+            "Tablero Kanban moderno para planificar tareas, con drag-and-drop, autosave y persistencia. Ideal para proyectos personales o equipos que necesitan foco y visibilidad en su proyecto.",
+        link: "https://codepen.io/giandev10/pen/ByyMGrp",
+        github: "https://github.com/gngian10/Kanban-Board",
+        image: "/board-proyecto.webp",
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.JS],
     },
 ];
 ---
