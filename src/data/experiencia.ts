@@ -7,13 +7,12 @@ export interface Experiencia {
 
 export const EXPERIENCE: Array<Experiencia> = [
     {
-        date: "octubre 2024 - Actualmente",
-        title: " Desarrollador Full Stack Freelance",
-        company: "Fiverr",
+        date: "octubre 2025 - Actualmente",
+        title: " Desarrollador Full Stack",
+        company: "Joinnus",
         descriptions: [
-            "Desarrollo APIs en Node.js y TypeScript que integran aplicaciones web con bases de datos.",
-            "Implemento aplicaciones con Astro y Next.js (SSR) optimizadas para SEO, UX y rendimiento.",
-            "Diseño interfaces en Figma que garantizan coherencia visual y mejor experiencia de usuario.",
+            "Implemento aplicaciones móviles y web con React Native y Nuxt, listas para operación en producción.",
+            "Desarrollo APIs y servicios backend con Java, Nest.js, integrando servicios cloud en AWS y APIs de OpenAI mediante Model Context Protocol (MCP), asegurando escalabilidad y mantenibilidad.",
         ],
     },
     {
@@ -21,7 +20,7 @@ export const EXPERIENCE: Array<Experiencia> = [
         title: "Analista de Software",
         company: "IDS Latam",
         descriptions: [
-            "Implementé APIs REST conectadas a frontend en React, Angular y React Native para plataformas mineras",
+            "Implementé APIs REST con Java, C# conectadas a frontend en React, Angular y React Native para plataformas mineras",
             "Migré sistemas a microfrontends y microservicios con CQRS y Docker, mejorando rendimiento y escalabilidad",
             "Integré Azure Blob Storage para acceso seguro a documentos técnicos en campo.",
         ],
