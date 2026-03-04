@@ -6,3 +6,4 @@ Welcome to my portfolio! This repository showcases a collection of projects and 
 
 -   Astro
 -   Tailwind CSS
+-   TypeScript
