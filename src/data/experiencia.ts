@@ -12,7 +12,7 @@ export const EXPERIENCE: Array<Experiencia> = [
         company: "Joinnus",
         descriptions: [
             "Implemento aplicaciones móviles y web con React Native y Nuxt, listas para operación en producción.",
-            "Desarrollo APIs y servicios backend con Java, Nest.js, integrando servicios cloud en AWS y APIs de OpenAI mediante Model Context Protocol (MCP), asegurando escalabilidad y mantenibilidad.",
+            "Desarrollo APIs y servicios backend con Nest.js, integrando servicios cloud en AWS, asegurando escalabilidad y mantenibilidad.",
         ],
     },
     {
