@@ -11,7 +11,7 @@ export const EXPERIENCE: Array<Experiencia> = [
         title: " Desarrollador Full Stack",
         company: "Joinnus",
         descriptions: [
-            "Implemento aplicaciones móviles y web con React Native y Nuxt, listas para operación en producción.",
+            "Implemento aplicaciones móviles y web con React Native y Nuxt, listas para producción.",
             "Desarrollo APIs y servicios backend con Nest.js, integrando servicios cloud en AWS, asegurando escalabilidad y mantenibilidad.",
         ],
     },
