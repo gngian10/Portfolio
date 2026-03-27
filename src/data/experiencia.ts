@@ -8,11 +8,11 @@ export interface Experiencia {
 export const EXPERIENCE: Array<Experiencia> = [
     {
         date: "octubre 2025 - Actualmente",
-        title: " Desarrollador Full Stack",
+        title: " Desarrollador de Software",
         company: "Joinnus",
         descriptions: [
             "Implemento aplicaciones móviles y web con React Native y Nuxt, listas para producción.",
-            "Desarrollo APIs y servicios backend con Nest.js, integrando servicios cloud en AWS, asegurando escalabilidad y mantenibilidad.",
+            "Desarrollo APIs y servicios backend con Nest.js, Node.js integrando servicios cloud en AWS, asegurando escalabilidad y mantenibilidad.",
         ],
     },
     {
